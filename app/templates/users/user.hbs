@@ -14,15 +14,19 @@
           {{@model.name}}
         </p>
         <p class="subtitle has-text-white my-2">
-          Example Value:
-          {{@model.value}}
+          Archived:
+          {{@model.archived}}
         </p>
         <button
           type="button"
           class="button is-pulled-left mt-4"
-          {{on "click" this.modifyValue}}
+          {{on "click" this.archiveUser}}
         >
-          Change Value
+          {{#if model.archived}}
+            Unarchive User
+          {{else}}
+            Archive User
+          {{/if}}
         </button>
 
       </div>
